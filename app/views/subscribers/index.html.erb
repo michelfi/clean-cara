@@ -1,0 +1,25 @@
+<!-- app/views/subscribers/index.html.erb -->
+<h2>Liste des Abonnés</h2>
+
+<div class="container mt-5 mb-5">
+  <table class="subscribers-table">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+        <th>Catégorie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @subscribers.each do |subscriber| %>
+        <tr>
+          <td><%= subscriber.name %></td>
+          <td><%= subscriber.surname %></td>
+          <td><%= subscriber.email %></td>
+          <td><%= subscriber.category %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

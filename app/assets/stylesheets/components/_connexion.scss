@@ -1,0 +1,7 @@
+.centered-form, .field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Centrer horizontalement le texte du formulaire */
+}
