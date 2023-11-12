@@ -50,9 +50,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_12_181020) do
     t.string "title"
     t.string "category"
     t.string "content"
-    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -67,10 +67,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_12_181020) do
 
   create_table "subscriptions", force: :cascade do |t|
     t.integer "subscriber_id", null: false
-    t.integer "newsletter_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["newsletter_id"], name: "index_subscriptions_on_newsletter_id"
     t.index ["subscriber_id"], name: "index_subscriptions_on_subscriber_id"
   end
 
@@ -89,7 +87,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_12_181020) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "posts", "users"
-  add_foreign_key "subscriptions", "newsletters"
   add_foreign_key "subscriptions", "subscribers"
 end
