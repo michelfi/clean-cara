@@ -46,6 +46,8 @@ gem "image_processing", ">= 1.2"
 gem 'bootstrap', '~> 4.0.0'
 
 gem 'simple_form'
+
+gem 'pg'
 # Fin des gem ajoutées manuellement
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
