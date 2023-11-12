@@ -20,16 +20,16 @@ puts "User3 (user) created!"
 
 puts "Creating a post"
 post1 = Post.create!(title: "Le titre du post", category: "La catégorie du post", content: "Le contenu du post", user_id: user1.id)
-post1.image.attach(io: File.open("storage/road-1072821_1280.jpeg"), filename: "nom_de_l_image1.jpg")
+post1.image.attach(io: File.open(Rails.root.join("storage/road-1072821_1280.jpeg")), filename: "nom_de_l_image1.jpg")
 puts "Post1 created !"
 
 post2 = Post.create!(title: "Le titre du post", category: "La catégorie du post", content: "Le contenu du post", user_id: user2.id)
-post2.image.attach(io: File.open("storage/road-1072823_1280.jpeg"), filename: "nom_de_l_image2.jpg")
+post2.image.attach(io: File.open(Rails.root.join("storage/road-1072823_1280.jpeg")), filename: "nom_de_l_image2.jpg")
 puts "Post2 created!"
 
-
 post3 = Post.create!(title: "Le titre du post", category: "La catégorie du post", content: "Le contenu du post", user_id: user3.id)
-post3.image.attach(io: File.open("storage/tree-736885_1280.jpeg"), filename: "nom_de_l_image3.jpg")
+post3.image.attach(io: File.open(Rails.root.join("storage/tree-736885_1280.jpeg")), filename: "nom_de_l_image3.jpg")
 puts "Post3 created !"
+
 
 puts "Finish!"
