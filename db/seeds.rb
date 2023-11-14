@@ -24,11 +24,11 @@ post1.image.attach(io: URI.open("https://res.cloudinary.com/dzj7zluu6/image/uplo
 puts "Post1 created !"
 
 post2 = Post.create!(title: "Le titre du post", category: "La catégorie du post", content: "Le contenu du post", user_id: user2.id)
-post1.image.attach(io: URI.open("https://res.cloudinary.com/dzj7zluu6/image/upload/v1699982054/jsctrtccgmifhftms4ss.jpg"), filename: "nom_de_l_image1.jpg")
+post2.image.attach(io: URI.open("https://res.cloudinary.com/dzj7zluu6/image/upload/v1699982054/jsctrtccgmifhftms4ss.jpg"), filename: "nom_de_l_image1.jpg")
 puts "Post2 created!"
 
 post3 = Post.create!(title: "Le titre du post", category: "La catégorie du post", content: "Le contenu du post", user_id: user3.id)
-post1.image.attach(io: URI.open("https://res.cloudinary.com/dzj7zluu6/image/upload/v1699982054/ntmdn7okqjuzydxgrygz.jpg"), filename: "nom_de_l_image1.jpg")
+post3.image.attach(io: URI.open("https://res.cloudinary.com/dzj7zluu6/image/upload/v1699982054/ntmdn7okqjuzydxgrygz.jpg"), filename: "nom_de_l_image1.jpg")
 puts "Post3 created !"
 
 
