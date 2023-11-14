@@ -50,6 +50,8 @@ gem 'simple_form'
 gem 'pg'
 
 gem "dotenv-rails"
+
+gem "cloudinary"
 # Fin des gem ajoutées manuellement
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

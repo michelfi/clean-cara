@@ -4,7 +4,7 @@
   <p class="post-date"><%= @post.created_at.strftime("%d %B %Y") %></p>
   <% if @post.image.attached? %>
     <% if @post.image.variable? %>
-      <%= image_tag @post.image, class: "post-image" %>
+      <%= cl_image_tag @post.image.key, class: "post-image" %>
     <% else %>
       <div class="video-container">
         <video controls class="post-video">

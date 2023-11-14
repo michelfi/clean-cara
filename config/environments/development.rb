@@ -34,7 +34,7 @@ Rails.application.configure do
   end
 
   # Ajout de Active storage
-  config.active_storage.service = :local
+  config.active_storage.service = :cloudinary
   config.active_storage.url_options = { host: 'localhost', port: 3000 }
 
   # Don't care if the mailer can't send.
