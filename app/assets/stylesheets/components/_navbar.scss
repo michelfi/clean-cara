@@ -1,58 +1,42 @@
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
-  background: rgb(79, 86, 149);
-  height: 60px;
+  background: #8583C0;
+  height: 140px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-mini {
+  display: flex;
+  align-items: center; /* Centrer verticalement */
+  background: #8583C0;
+  height: 30px;
+  font-weight: bold;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-
-}
-.navbar-lewagon .avatar {
-  width: 40px; /* Ajustez la taille en fonction de vos besoins */
-  height: 40px; /* Ajustez la taille en fonction de vos besoins */
-  border-radius: 50%; /* Pour obtenir une forme circulaire (optionnel) */
-}
-
-/* Pour les liens */
-.nav-link {
-  color: #fff; /* Couleur de base du texte */
+/* Pour les liens dans la barre de navigation */
+.navbar .nav-link,
+.navbar .nav-item.dropdown .nav-link,
+.navbar .nav-item.dropdown .dropdown-item {
+  color: #FFFFFF; /* Couleur du texte en blanc */
   transition: background-color 0.3s; /* Animation lors du survol */
   text-decoration: none; /* Enlever le soulignement par défaut des liens */
 }
 
 /* Au survol */
-.nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Couleur de fond au survol (transparente) */
-  color: #ff9900; /* Couleur du texte au survol */
+.navbar .nav-link:hover,
+.navbar .nav-item.dropdown .nav-link:hover,
+.navbar .nav-item.dropdown .dropdown-item:hover {
+  background-color: #FFFFFF; /* Couleur de fond au survol (transparente) */
+  color: #CC5B56; /* Couleur du texte au survol */
 }
 
 /* En cliquant (état actif) */
-.nav-link:active {
+.navbar .nav-link:active,
+.navbar .nav-item.dropdown .nav-link:active,
+.navbar .nav-item.dropdown .dropdown-item:active {
   background-color: rgba(255, 255, 255, 0.3); /* Couleur de fond lorsque le lien est actif (transparente) */
-  color: #ff9900; /* Couleur du texte lorsque le lien est actif */
+  color: #CC5B56; /* Couleur du texte lorsque le lien est actif */
 }
 
-/* Pour les boutons */
-.btn {
-  transition: background-color 0.3s; /* Animation lors du survol */
-}
-
-/* Au survol */
-.btn:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Couleur de fond au survol (transparente) */
-  color: #ff9900; /* Couleur du texte au survol */
-}
-
-/* En cliquant (état actif) */
-.btn:active {
-  background-color: rgba(255, 255, 255, 0.3); /* Couleur de fond lorsque le bouton est actif (transparente) */
-  color: #ff9900; /* Couleur du texte lorsque le bouton est actif */
-}
 
 
 /* Pour le lien du dropdown */
@@ -93,4 +77,31 @@
 /* En cliquant sur les éléments du menu (état actif) */
 .dropdown-item:active {
   background-color: #444; /* Couleur de fond lorsque l'élément est actif */
+}
+
+
+/* Pour le lien "Home" */
+.navbar .nav-item .custom-home-link {
+  color: #FFFFFF;
+  font-weight: bold; /* Remplace #ff0000 par la couleur que tu souhaites utiliser */
+  /* Autres styles que tu veux appliquer au lien "Home" */
+}
+
+/* Au survol du lien "Home" */
+.navbar .nav-item .custom-home-link:hover {
+  color: #CC5B56;/* Couleur du texte au survol du lien "Home" */
+  /* Autres styles au survol du lien "Home" */
+}
+
+/* En cliquant sur le lien "Home" (état actif) */
+.navbar .nav-item .custom-home-link:active {
+  color: #CC5B56; /* Couleur du texte lorsque le lien "Home" est actif */
+  /* Autres styles lorsque le lien "Home" est actif */
+}
+
+/* Pour le lien "Home" actif */
+.navbar .nav-item.active .custom-home-link {
+  color: #CC5B56; /* Couleur du texte lorsque le lien "Home" est actif */ /* Mettre la police en gras */
+  background-color: #FFFFFF;
+  /* Autres styles pour le lien "Home" actif */
 }
