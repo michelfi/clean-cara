@@ -1,47 +1,70 @@
-<div class="navbar navbar-expand-sm navbar-light navbar">
-  <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "Logo_CaraNews_blanc.png", style: "width: 100%; height: auto;" %>
-    <% end %>
+<div class="navbar-fixed">
+  <div class="navbar navbar-expand-sm navbar-light navbar">
+    <div class="container-fluid">
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "Logo_CaraNews_blanc.png", style: "width: 100%; height: auto;" %>
+      <% end %>
+    </div>
+    <div class="container-fluid">
+      <p>«Tout ce que l'homme ignore n'existe pas pour lui.
+          Donc, l'univers de chacun se résume à la taille de ses connaissances. »Albert Einstein
+      </p>
+    </div>
+    <div class="container-fluid">
+      <div class="nav-item <%= 'active' if current_page?(new_post_path) %>">
+        <%= link_to "Qui sommes-nous ?", new_post_path, class: "nav-link custom-home-link" %>
+      </div>
+      <div class="nav-item <%= 'active' if current_page?(new_post_path) %>">
+        <%= link_to "Contact", new_post_path, class: "nav-link custom-home-link" %>
+      </div>
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-telegram"></i></a>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <button type="button" class="btn btn-primary">S'inscrire à la Newsletter</button>
+    </div>
   </div>
-</div>
+
 
 
 
   <div class="navbar navbar-expand-sm navbar-light navbar-mini">
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav me-auto mx-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item <%= 'active' if current_page?(root_path) %>">
-          <%= link_to "Home", root_path, class: "nav-link custom-home-link" %>
-        </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mx-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item <%= 'active' if current_page?(root_path) %>">
+            <%= link_to "Home", root_path, class: "nav-link custom-home-link" %>
+          </li>
 
-        <% if current_user.user_type.in?(['admin', 'poster']) %>
-          <!-- Bouton spécifique pour les administrateurs et posteurs -->
-          <li class="nav-item <%= 'active' if current_page?(new_post_path) %>">
-            <%= link_to "Créer un article", new_post_path, class: "nav-link custom-home-link" %>
+          <% if current_user.user_type.in?(['admin', 'poster']) %>
+            <!-- Bouton spécifique pour les administrateurs et posteurs -->
+            <li class="nav-item <%= 'active' if current_page?(new_post_path) %>">
+              <%= link_to "Créer un article", new_post_path, class: "nav-link custom-home-link" %>
+            </li>
+          <% end %>
+          <% if current_user.user_type.in?(['admin']) %>
+            <!-- Bouton spécifique pour les administrateurs et posteurs -->
+            <li class="nav-item <%= 'active' if current_page?(subscribers_path) %>">
+              <%= link_to "Liste", subscribers_path, class: "nav-link custom-home-link" %>
+            </li>
+          <% end %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Mon Compte
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Mon profil", profile_path(current_user), class: "dropdown-item" %>
+              <%= link_to "Déconnexion", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
-        <% if current_user.user_type.in?(['admin']) %>
-          <!-- Bouton spécifique pour les administrateurs et posteurs -->
-          <li class="nav-item <%= 'active' if current_page?(subscribers_path) %>">
-            <%= link_to "Liste", subscribers_path, class: "nav-link custom-home-link" %>
-          </li>
-        <% end %>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Mon Compte
-          </a>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <%= link_to "Mon profil", profile_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Déconnexion", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
+      </ul>
+    </div>
   </div>
 </div>

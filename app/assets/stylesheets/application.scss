@@ -14,4 +14,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300&display=swap');
 body {
   font-family: 'Georgia';
+  margin-top: 170px;
+}
+
+
+/* Écrase les variables Bootstrap pour personnaliser le bouton btn-primary */
+.btn-primary {
+  color: #ffffff; /* Couleur du texte */
+  background-color: #CC5B56;
+  border-color: #CC5B56; /* Couleur de fond */
+}
+
+/* Au survol */
+.btn-primary:hover {
+  color: #CC5B56;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Lorsqu'il est actif (enfoncé) */
+.btn-primary:active {
+  color: #CC5B56;
+  background-color: #ffffff;
+  border-color: #ffffff;
 }
