@@ -1,16 +1,16 @@
 <div class="navbar-fixed">
   <div class="navbar navbar-expand-sm navbar-light navbar">
-    <div class="container-fluid">
+    <div class="container ml-5">
       <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "Logo_CaraNews_blanc.png", style: "width: 100%; height: auto;" %>
       <% end %>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid mr-5">
       <p>«Tout ce que l'homme ignore n'existe pas pour lui.
           Donc, l'univers de chacun se résume à la taille de ses connaissances. »Albert Einstein
       </p>
     </div>
-    <div class="container-fluid">
+    <div class="container ml-5">
       <div class="nav-item <%= 'active' if current_page?(new_post_path) %>">
         <%= link_to "Qui sommes-nous ?", new_post_path, class: "nav-link custom-home-link" %>
       </div>
@@ -22,7 +22,7 @@
         <a href="#"><i class="fab fa-telegram"></i></a>
       </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-sm">
       <button type="button" class="btn btn-primary">S'inscrire à la Newsletter</button>
     </div>
   </div>
