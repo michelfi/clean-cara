@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @subscriber = Subscriber.new
     authorize @post
   end
 

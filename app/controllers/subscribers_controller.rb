@@ -3,6 +3,10 @@ class SubscribersController < ApplicationController
     @subscribers = Subscriber.all
   end
 
+  def new
+    @subscriber = Subscriber.new
+  end
+
   def create
     @subscriber = Subscriber.new(subscriber_params)
     if @subscriber.save
@@ -18,6 +22,6 @@ class SubscribersController < ApplicationController
   private
 
   def subscriber_params
-    params.require(:subscriber).permit(:surname, :name, :email, :category)
+    params.require(:subscriber).permit(:name, :surname, :email, category_ids: [])
   end
 end

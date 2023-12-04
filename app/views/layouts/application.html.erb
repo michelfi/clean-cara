@@ -11,7 +11,6 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <%= render "shared/navbar" %>
     <%= csrf_meta_tags %>
 
     <!-- Place the first <script> tag in your HTML's <head> -->
@@ -19,17 +18,19 @@
   </head>
 
   <body>
-        <% if notice %>
+     <%= render "shared/navbar" %>
+      <% if notice %>
       <div class="alert alert-success">
         <%= notice %>
       </div>
-    <% end %>
+      <% end %>
     <% if alert %>
     <div class="alert alert-danger">
       <%= alert %>
     </div>
     <% end %>
     <%= yield %>
+
     <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
     <script>
       tinymce.init({
@@ -38,6 +39,6 @@
         toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
       });
     </script>
+    <%= render "shared/footer" %>
   </body>
-        <%= render "shared/footer" %>
 </html>

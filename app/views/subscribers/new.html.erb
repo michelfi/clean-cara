@@ -1,0 +1,22 @@
+<% if cookies[:saved_subscriber] %>
+  <div class="success-message">
+    <p>Vous êtes inscrit !</p>
+  </div>
+<% else %>
+  <div class="container-post mt-10">
+      <%= form_for @subscriber, html: { class: "subscriber-form" } do |f| %>
+      <%= f.text_field :name, placeholder: "Nom", class: "input-field" %>
+      <%= f.text_field :surname, placeholder: "Prénom", class: "input-field" %>
+      <%= f.email_field :email, placeholder: "E-mail", class: "input-field" %>
+      <% ['Comprendre l\'actualité', 'Créer le futur', 'Arts et culture', 'Méditation et spiritualité', 'Événements et Inscriptions'].each do |category| %>
+        <div class="checkbox-group">
+          <%= check_box_tag "subscriber[category]", category, @subscriber.category == category, id: "category_#{category.parameterize}" %>
+          <%= label_tag "category_#{category.parameterize}", category %>
+        </div>
+      <% end %>
+      <div class="cstm-btn-container">
+        <%= f.submit "S'inscrire à la Newsletter", class: "cstm-btn" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

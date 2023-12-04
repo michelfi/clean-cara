@@ -1,0 +1,14 @@
+<!-- _subscribe_modal.html.erb -->
+
+<div class="modal-overlay" id="subscribe-modal" style="display: none;">
+  <div class="modal">
+    <div class="newsletter-form">
+      <%= form_for @subscriber do |f| %>
+        <%= f.text_field :name, placeholder: "Nom", class: "input-field" %>
+        <%= f.text_field :surname, placeholder: "Prénom", class: "input-field" %>
+        <%= f.email_field :email, placeholder: "E-mail", class: "input-field" %>
+        <%= f.select :category, options_for_select(["Actualité", "Culture"]), {}, class: "input-field" %>
+        <%= f.submit "S'inscrire à la Newsletter", class: "submit-button" %>
+      <% end %>
+    </div>
+

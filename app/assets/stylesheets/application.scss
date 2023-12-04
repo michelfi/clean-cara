@@ -5,7 +5,6 @@
 @import "components/_footer";
 @import "components/_connexion";
 @import "components/_search-form";
-@import "components/_avatar";
 @import "components/_card";
 @import "components/_show-post";
 @import "components/_newsletters_form";
@@ -19,24 +18,33 @@ body {
 
 
 /* Écrase les variables Bootstrap pour personnaliser le bouton btn-primary */
-.btn-primary {
+.cstm-btn {
   color: #ffffff; /* Couleur du texte */
   background-color: #CC5B56;
   border-color: #CC5B56; /* Couleur de fond */
+  padding: 10px; /* Ajuste le padding selon tes préférences */
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 /* Au survol */
-.btn-primary:hover {
+.cstm-btn:hover {
   color: #CC5B56;
   background-color: #ffffff;
   border-color: #ffffff;
 }
 
 /* Lorsqu'il est actif (enfoncé) */
-.btn-primary:active {
+.cstm-btn:active {
   color: #CC5B56;
   background-color: #ffffff;
   border-color: #ffffff;
+}
+.cstm-btn-container {
+  text-align: center;
+  margin-top: 10px; /* Ajuste la marge supérieure selon tes préférences */
 }
 
 h3 {

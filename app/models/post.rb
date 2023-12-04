@@ -6,6 +6,6 @@ class Post < ApplicationRecord
 
   # Validations
   validates :title, presence: true
-  validates :category, presence: true
+  validates :category, presence: true, inclusion: { in: ['Comprendre l\'actualité', 'Créer le futur', 'Arts et culture', 'Méditation et spiritualité', 'Événements et Inscriptions'] }
   validates :content, presence: true
 end
