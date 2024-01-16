@@ -16,6 +16,32 @@
   </div>
 <% end %>
 -->
+<div class="container py-4">
+  <h3>A la une</h3>
+  <div class="mt-3 cards-hp mx-auto">
+    <% if @latest_post %>
+      <div class="card-custom">
+        <%= content_tag :span, @latest_post[:category], class: "category-style mb-2" %>
+        <% if @latest_post.image.attached? %>
+          <% if @latest_post.image.variable? %>
+            <%= image_tag @latest_post.image, class: "card-image" %>
+          <% else %>
+            <video controls class="card-image">
+              <source src="<%= url_for(@latest_post.image) %>" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          <% end %>
+        <% end %>
+        <div class="card-details">
+          <strong><%= link_to @latest_post[:title], post_path(@latest_post[:id]), class: "card-title" %></strong>
+        </div>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
 
 <div class="container py-4">
   <h3>Derniers articles en ligne</h3>

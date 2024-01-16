@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     @posts = Post.order(created_at: :desc)
+    @latest_post = Post.order(created_at: :desc).first
     @subscriber = Subscriber.new
   end
 
